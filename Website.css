@@ -1,0 +1,199 @@
+/* default: 16px */
+
+* {
+    box-sizing: border-box;
+}
+
+div.floating-icon{
+    position:fixed;
+    right:0%;
+    top:30%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.fake-img {
+    border: 1px solid black;
+    padding: 1.25rem; 
+    text-align: center;
+    background: #ddd;
+}
+
+/* Overlay */
+.img-container{
+    position: relative;
+    width: 100%;
+}
+
+.img-container .overlay{
+    position: absolute;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container .left-position{
+    width: 0;
+    right: 0;
+    top: 0;
+}
+
+.img-container:hover .overlay.left-position{
+    transition: 1s ease;
+    width: 100%;
+}
+
+.img-container .overlay .text{
+    color: white;
+    white-space: nowrap;
+
+    position: absolute;
+    overflow: hidden;   
+
+    /*Centralise*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.img-container .right-position{
+    width: 0;
+    left: 0;
+    top: 0;
+}
+
+.img-container:hover .overlay.right-position{
+    transition: 1s ease;
+    width: 100%;
+}
+
+.img-container .top-position{
+    height: 0;
+    top: 0;
+}
+
+.img-container:hover .overlay.top-position{
+    transition: 1s ease;
+    height: 100%;
+}
+
+.img-container .bottom-position{
+    height: 0;
+    bottom: 0;
+}
+
+.img-container:hover .overlay.bottom-position{
+    transition: 1s ease;
+    height: 100%;
+}
+
+
+
+
+/* Header */
+header {
+    padding: 3.75rem;
+    text-align: center;
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+/* Links */
+nav  {
+    display: flex;
+    background-color: #333;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.875rem 1.25rem;
+    text-align: center;
+}
+
+/*Polaroid*/
+.gallery{
+    max-height:18.75rem;
+}
+
+.gallery .polaroid img{
+    height:12.35rem;
+}
+
+.gallery .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.gallery .polaroid{
+    margin: 0.125rem;
+    padding: 0.625rem;
+    background-color: white;
+    box-shadow: 0 0.3rem 0.5rem 0 rgba(0,0,0,0.2),0 0.375rem 1.25rem 0 rgba(0,0,0,0.19);
+}
+
+.gallery .descriptor{
+   text-align: center;
+   padding: 0.625rem 1.25rem;
+}
+
+.gallery .polaroid:hover{
+    transform: scale(1.01);
+}
+
+.text{
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%)
+
+}
+
+/* container to split the webpage into 2 */
+div.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* left col */
+aside.left-col {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 1.25rem; 
+}
+
+/* main col */
+main.main-col {
+    flex: 70%;
+    padding: 1.25rem;
+
+    background-image: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+}
+
+/* Footer */
+footer {
+    text-align: center; /* justification */
+    padding: 1.25rem;
+    background-color: #ddd;
+}
+
+@media screen and (max-width: 900px) {
+    div.wrapper {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .img-container .overlay .text{
+        font-size: 1rem;
+    }
+}
